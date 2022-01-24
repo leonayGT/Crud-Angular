@@ -1,0 +1,56 @@
+<nav class="navbar navbar-light bg-dark">
+    <h3 class="text-info" >
+
+      Crud
+    </h3>
+  </nav>
+
+<table cellPadding='3' width="100%" border="1px" >
+  <thead style="border-bottom: 1px solid #aaa;
+   position: sticky; top: 0px; background-color: white; box-shadow: 0 2px 2px rgba(255,0, 0, 0.7); " >
+    <th width="15%" height="20%">
+      Id
+    </th>
+    <th width="30%" height="20%">
+      Nome
+    </th>
+    <th width="10%" height="20%">
+      CPF
+    </th>
+    <th width="10%">
+      Telefone
+    </th>
+    <th style="width:5%;">
+      Opções
+    </th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let crud of cruds; let i = index"  style="border-bottom: 1px solid #ccc;" class="lista">
+       <td>{{crud.id}}</td>
+       <td>{{crud.nome}}</td>
+       <td>{{crud.cpf}}</td> 
+       <td>{{crud.telefone}}</td>
+       <td class="d-flex gap-2 justify-content-center"> <button class="btn btn-info" (click)="visualizarinfo(i)"> <span class="material-icons text-white">visibility</span></button> <button class=" btn btn-danger" (click)="excluir(i)"><span class="material-icons">delete</span></button><button class="btn btn-warning " (click)="editarInfo1(i)"><span class="material-icons">edit</span></button>  </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td><input type="number" [(ngModel)]="dadoNome.id" placeholder="ID"></td>
+      <td><input type="text" [(ngModel)]="dadoNome.nome" placeholder="Nome"></td>
+      <td><input type="number" [(ngModel)]="dadoNome.cpf" placeholder="CPF"></td>
+      <td><input type="tel" [(ngModel)]="dadoNome.telefone" placeholder="Telefone"></td>
+      <td class="d-flex gap-2 justify-content-center"><button class="btn btn-primary  " (click)="adcionarNomes()"><span class="material-icons">add</span></button> 
+    </tr>
+  </tfoot>
+</table>
+
+
+
+
+
+
+
+
+
+
